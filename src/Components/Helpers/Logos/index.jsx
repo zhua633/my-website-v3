@@ -5,7 +5,7 @@ const LogoIcons = () => {
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
       <a
         href="https://www.linkedin.com/in/anvilly-huang-92694b142/"
-        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        class="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-500"
       >
         <svg
           class="w-4 h-5"
@@ -19,11 +19,11 @@ const LogoIcons = () => {
             clip-rule="evenodd"
           />
         </svg>
-        <span class="sr-only">Instagram page</span>
+        <span class="sr-only">Linkedin page</span>
       </a>
       <a
         href="https://github.com/zhua633"
-        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        class="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-500"
       >
         <svg
           class="w-5 h-5"
@@ -41,7 +41,7 @@ const LogoIcons = () => {
       </a>
       <a
         href="mailto:anvillyh@gmail.com"
-        class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        class="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-500"
       >
         <svg
           class="w-5 h-5"
