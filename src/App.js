@@ -8,7 +8,6 @@ import Footer from "./Components/Footer/index";
 import Title from "./Components/Helpers/Title";
 import Heading from "./Components/Heading";
 import Timeline from "./Components/Timeline";
-import Background from "./Components/Helpers/particles";
 import FadeinSection from "./Components/Helpers/FadeinSection";
 import Navbar from "./Components/Navbar";
 import './index.css'
@@ -25,15 +24,13 @@ export default function App() {
     
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
-    camera.position.setX(-3);
-    
-    renderer.render(scene, camera);
 
+    renderer.render(scene, camera);
+ 
     // Lights
-    // const pointLight = new THREE.PointLight(0xffffff);
-    // pointLight.position.set(5, 5, -10);
-    // scene.add(pointLight)
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(5, 5, -10);
+    scene.add(pointLight)
     
     const ambientLight = new THREE.AmbientLight(0xffffff,3);
     scene.add(ambientLight);
@@ -90,13 +87,16 @@ export default function App() {
       moon.rotation.y += 0.002;
       moon.rotation.z += 0.02;
 
-      camera.position.z = t * -0.01;
-      camera.position.x = t * -0.0002;
-      camera.rotation.y = t * -0.0002;
+      const newZ = t * -0.01;
+      const newX = t * -0.0002;
+      const newRotationY = t * -0.0002;
+
+      camera.position.z = Math.max(newZ, 1); // Prevent camera from going too far back
+      camera.position.x = newX;
+      camera.rotation.y = newRotationY;
     }
 
     document.body.onscroll = moveCamera;
-    moveCamera();
 
     function animate() {
       requestAnimationFrame(animate);
